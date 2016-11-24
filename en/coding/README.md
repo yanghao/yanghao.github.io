@@ -1,3 +1,7 @@
+---
+title: Hua Yanghao's Front page
+layout: post
+---
 The journey of coding
 =====================
 
