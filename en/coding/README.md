@@ -4,7 +4,6 @@ layout: nil
 ---
 {% include stylesheet.css %}
 {% include github-dark.css %}
-{% include print.css %}
 
 The journey of coding
 =====================
