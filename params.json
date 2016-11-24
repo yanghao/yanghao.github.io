@@ -1,6 +1,6 @@
 {
   "name": "Yanghao.GitHub.io",
   "tagline": "Hua Yanghao's Pages",
-  "body": "### Welcome to Hua Yanghao's Pages\r\nWelcome to my personal pages.\r\n\r\nSee [Hua Yanghao's linkedin page](https://de.linkedin.com/in/huayanghao/) for more information.\r\n\r\n### Areas of interests\r\n* [Coding](/en/coding/README)\r\n* [Radio](/en/radio/README)\r\n",
+  "body": "### Welcome to Hua Yanghao's Pages\r\nWelcome to my personal pages.\r\n\r\nSee [Hua Yanghao's linkedin page](https://de.linkedin.com/in/huayanghao/) for more information.\r\n\r\n### Areas of interests\r\n* [Coding](en/coding/README.md)\r\n* [Radio](en/radio/README)\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
