@@ -1,0 +1,98 @@
+The U-Boot Loader
+=================
+In the embedded world, when your machine first runs, it is normally a small
+amount of "BootROM" code that
+is hard coded on the chip. The Boot ROM will fetch another small piece of code
+from a persistent storage (MBR on x86, eMMC/Nand on embedded) and execute it.
+And that small piece of code will boot the full-sized boot loader. You see how
+complex it is even boot just to the boot loader.
+
+[U-Boot](http://www.denx.de/wiki/U-Boot) is one of the most popular boot loader
+for embedded systems (especially for ARM based ones). I have ported U-Boot to
+many Intel communication baseband processors, as well as designed some communication
+protocols in U-Boot (not yet published), and want to share the experience on
+U-Boot in this article.
+
+The "small piece" matters
+=========================
+The mentioned "small peice" of code in the above section, is called u-boot-spl
+in u-boot term. It is usually a few dozen killo-bytes, reside on the first block
+of a flash memory.
+
+The SPL code is responsible for initializing various critical hardware resources
+that is necessary for the operation of the external DRAM. Since when SPL code is
+running, the DDR memory is not yet available, SPL itself has to run on on-chip
+memory, which is normally with very limited size. And that is the reason why the
+SPL image has to be small enough to fits into the on-chip memory.
+
+When the SPL finished execution, it initialized critical power supplies as well
+as clocks, and made the DDR controller up and running. The DDR memory is
+normally a dozen of Mega-bytes to even a few Giga-bytes. When DDR memory is
+ready, the last step performed by SPL is to read the full sized boot loader, the
+U-Boot, from flash memory to DDR memory and jumps to it.
+
+U-Boot starts to run
+====================
+So now SPL already loaded U-Boot and executed it. U-Boot first runs from the
+location where it is loaded by the SPL code. Then it will re-locate itself to
+the most upper part of the DDR memory, and release the original address range it
+resides. This way U-Boot can later use all the lower memory address range to
+load Linux image, device tree, initramfs etc.
+
+If U-Boot started successfully, it will enter a command loop (if no autocmd
+specified or timeout count is interrupted) waiting command from user. User now
+can run various commands, including loading images via communication link.
+
+U-Boot startup process
+======================
+In U-Boot a few important functions is running at different booting stage:
+
+- *lowlevel_init*: This function need to be provided by board support package
+  and is executed right after setting up the interrupt vectors. Anything that is
+  critical and none-standard for the CPU should be initialized here.
+- *board_init_f*: This function is called before u-boot relocate itself to the
+  upper DRAM. It calculates the various section length and initialize the
+  "global data" for the relocation process. Serial console is also initialized
+  during this process. When running board_init_f, the C environment is not yet
+  complete, no static data should be used except the "global data".
+- *board_init_r*: This function is called after the relocation process is done.
+  When this function is called, the complete C environment is initialized and
+  global data can be used properly.
+  - *board_init*: This function is called right after enabled caches, at the
+    beginning of the board_init_r process. board_init function is normally
+    provided by board support packages to perform any board specific
+    initializations required.
+
+When *board_init_r* never returns, it runs the inifine loop to execute the
+"main_loop" functions, which is the u-boot shell that accept command and execute
+them.
+
+U-Boot Makefile System
+==================================
+In U-Boot, Makefile are distributed to individual folders as for most big
+software this is necessary to keep the make system simple and under control.
+U-Boot collect various object in 2 variables:
+
+* COBJS: C Object file
+* SOBJS: Assembly Object file
+
+All you need to do is copy a template make file and list your COBJS and SOBJS.
+However you need still to add the library path if your code is *NOT* in
+board/<vendor>/<board>. Code in that folder is already taken care in make file.
+Code in other folder just need to list the library it produced in the toplevel
+Makefile.
+
+U-Boot Global Data
+==================
+The global data in U-Boot is critical. The serial output, relocation process all
+depends on the global data content.
+
+The reason for using a special global data before relocation is to pass
+information down while no complete C environment available (BSS not
+initialized). In U-boot, BSS section is only initialized after *board_init_f*. I
+was wondering how much performance penalty could it have to initialize BSS
+before *board_init_f* and copy that section over to new location while
+relocating. This will greatly simply the code and make a complete C enironment
+ready from the very beginning.
+
+To be continued ...

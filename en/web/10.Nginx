@@ -1,0 +1,58 @@
+Nginx: one of the best front-end web server
+===========================================
+In software terminology, anything in a system that is directly facing with user
+is called a front-end. Everything else sitting behind is called back-end. Here
+front-end web server means nginx is normally used as the direct server which
+user clients are connecting to.
+
+[Nginx](http://nginx.org) and [Apache](http://apache.org) could be 2 of the most
+popular web servers used in the world. But with very different design priciple.
+Apache is designed in a very simple model: one connection per process/thread.
+But process/thread in Linux do consume some memory and some resources. And
+starting new process itself will take some time. When process number becomes
+huge, performance will slow down quite quickly. Nginx however use a different
+model: it uses one process to handle thousands of connections, with
+none-blocking IO. So here with one process, many resources are shared, and no
+new process/thread started when new connection comes in. This have proved being
+able to scale much better.
+
+Nginx and Dynamic Content
+=========================
+Nginx was initially good at serving static files only, it lacks the feature
+support in Apache for serving dynamic content. However Nginx used a very clever
+design choice: Nginx can dispatch a request to another server to delegate the
+request. Support you have 10 other machines can fullfil a http request, and Nginx
+can load-balancing between the 10 machines and distributes all incoming requests
+evenly to the 10 machines. This is called *reverse proxy*.
+
+With Python, Nginx also supports a special mode of communication with another
+server using more efficient protocol: [UWSGI](http://projects.unbit.it/uwsgi/).
+This design made Nginx completely independent of application servers, and allow
+application servers to run in parallel on many machines for Nginx to fully
+utilize its potential. These Nginx server and application server normally reside
+within the same local area network (LAN), so connection between Nginx and
+application server won't last for long period. However user client connected to
+Nginx is normally via a much slower connection which could last very long,
+however, Nginx is good at maintaining live connections. The application servers,
+even though not good at maintain too many live connections, no longer need to do
+so with fast LAN connections.
+
+Nginx and URL rewrite
+=====================
+One of the features I loved a lot in Nginx is the URI rewrite feature.
+
+When a URL request comes in, you could easily rewrite that URI as a different
+one to another back-end server. This makes URL looks pretty tidy even if the URL
+to the back-end server is a complete mess. And all of this happen in the Nginx
+configuration file, another good example in data driven design.
+
+Conclusion
+==========
+Nginx is a good design that can scale up very well, and its modular design makes
+it possible to choose the best back application server. Nginx can also be
+connected with the Memcached module to fetch the content from Memcached directly
+and bypassing the application server entirely, to further reduce application
+server load.
+
+And best of all, it is open source and free software, you have the chance to
+know its every single guts inside.

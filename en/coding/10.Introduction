@@ -1,0 +1,62 @@
+Programming in General
+----------------------
+
+# What the computer can do for you
+Computers are extremely good at repeative tasks. It not only handles it 100%
+accurate, it also does it much faster than human beings.
+
+When the complexity of the problem increases, the 100% accuracy will no longer
+holds. The reason is, it is not always easy to describe exactly the
+pre-conditions and flows to run a task. When you do something personally, you
+have assumed lots of conditions and knowledges already. And when you ask the
+computer to repeat that task, you at least have to let the computer know all the
+conditions that matters.
+
+# How you command your computer
+It is easy to ask some human beings to do something for you, because we human
+beings have the ability to interpret complex ideas. However, computers are not
+yet on the same level of comprehension capability. Computers only understands
+the most basic premitives: go straight, if yellow signal, go left, otherwise go
+right ... things like this.
+
+Programming is the process of designing a task that is going to be handled by
+computer. And the language you're programming in matters a lot on how you design
+your program.
+
+Computer programs was designed with Assembly (or something similar) from the
+very begining of computer history. Then comes the procedure call based
+programming paradigm such as C programming language. Later comes also the
+so called interpreted programming language such as Python, where no compilation
+to machine code is needed, your language is interpreted on-the-fly. And even
+better, you don't need to manage the memory you use, you just use memory
+automatically when you create objects. These changes are not trivial ones. They
+are the revolutionary changes happened on programming language.
+
+With interpreted languages like Python, you don't think about programs as a
+sequency flow of binary instructions managing a pool of memories, you think
+about class, object. Yet you still need to know the low level details if you
+want to better optimize your code in interpreted languages.
+
+# Programming Language and Solving Problems
+Programming language is the verbs and nouns that let you speak with your
+computer. But when solving real problems, it is how you design the solution.
+
+The choice of language do have an impact on how you instruct your computer, but
+in the end it is all the same piece of CPU that carries out the actions.
+
+The programming languges I used the most are C and Python, in the embedded world
+C is really the solely choice as well as the only sensible choice. Whereas
+Python is where I get started with the problem.
+
+An example is when I started design a communication protocol, that transmits
+data over unreliable link reliably, I started with Python and made a prototype
+in 2 days, get it tested using 2 PCs and make sure from the protocl perspective
+everything is working allright. Then I start to implement the same protocol in C
+targeting on the real hardware where no OS is running there yet. This is how
+fast prototyping contributes to the real design: the C part was implemented in 1
+week as compared to the Python implementation.
+
+Python shines on the fast turn-around time, where in C you always have to
+compile and load.
+
+EOF.

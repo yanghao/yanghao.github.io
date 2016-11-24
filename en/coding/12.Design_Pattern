@@ -1,0 +1,77 @@
+Design Pattern: Generic Design solves repeative Problems
+--------------------------------------------------------
+Design pattern is how you design your solution that can be used repeatively. The
+best design pattern in traditional house buildings are *bricks*. Where you
+design a brick, repeat it, and you can use bricks in numerous places. Another
+even better design pattern in house building is *concretes*, where it can even
+form arbitary shapes with great strength.
+
+The problem in house building is simple: We need a solution that can form the
+basic structure of the house, with required strength. So instead of designing
+highly specialized and dedicated walls for a house, we design smaller bricks or
+concretes that in turn makes building specialized walls easier.
+
+In software engineering, we also see problems that occur over and over again.
+The foundamental question is: why do we need to care about design patterns?
+Because of efficiency, fast responsiveness to adapt, and re-usable entities.
+
+We are confident when we pick a brick and build something, because it has been
+used in hundreds of years in millions of places, it gives us the kind of
+confidence that we won't get if we design something similar on our own.
+
+Another reason is for scalability. Too often we are talking about the
+scalability of a large scale service, like a search engine design. However,
+software engineers themselves do a a scalability issue. With good design
+pattern, you can easily pick up and re-use solutions you did before, and quickly
+response to new challenges.
+
+Case Study: UNIX File System
+-----------------------------------------
+UNIX file system is one of the best modular design in software engineering. It
+is designed and layered in such a way that users/applications don't even care
+about the file system type. File system abstracts storage of data in a very
+generic way:
+
+* Organize data in hierachical order, in a tree form.
+* Everything stored in the tree is represented as a node in the tree.
+* Leafs are files, non-leafs are folders.
+
+This design especially makes the in-folder listing/searching efficient. Some one
+is suggesting that design file system as a key value pair is also good, such as
+("/home/user/file", file_content), however if one file system is represented by
+a single huge table like that, the in-folder listing/searching will always have
+to go through the entire content list, which will be less efficient.
+
+UNIX file system stores devices as a special file on the file system: it uses a
+special attribute to mark if the file is a normal file or if the file represents
+a device. That is when people say on UNIX "everything is a file".
+
+UNIX file system solved a foundamental problem: storing data on persistent
+storage devices. Different data can be stored in different files and can be
+searched quickly. Nearly all applications need to have some form of persistent
+data storage and retrieving mechanism and UNIX file system unified that
+interface very well.
+
+Design with Patterns
+--------------------
+It is not easy to start straight with a good design pattern in hand. And Ken
+told us already that "when in doubt, use brute force".
+
+When facing a new problem, no one can predict from the very beginning what could
+be the best design choices. And it always take a few round a trial and fail
+testing before we start to realize the core problem: the problem that is not
+unique and happens elsewhere also. And it is time to design for a generic
+solution only when you are able to abstract the problem in a few sentence.
+
+But how can I know if there are similar problems? And how can I abstract in the
+best way? This is completely experience and art. If you have seen more, you
+know more. And if you thought a lot, you know how other people solves it with
+art, you could probably imagine and craft a similar or even better solution.
+Imagination is too important. But the first thing is always: can you get
+yourself in front of the core problem?
+
+Resources
+---------
+
+* [Design Patterns in Python](http://www.aleax.it/gdd_pydp.pdf)
+* [Design Patterns: Elements of Reusable Object-Oriented Software](http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/)

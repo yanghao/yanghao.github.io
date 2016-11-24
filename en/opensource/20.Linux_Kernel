@@ -1,0 +1,86 @@
+The Linux Kernel
+================
+Linux kernel is already running everywhere, majority of the servers, majority of
+the smartphones are running on Linux. And in fact in the embedded world Linux is
+the only choice you might have.
+
+Prepare Linux Boots
+===================
+Before OS can run on a system, it always need a boot loader to get critical
+resources initialized and then load the kernel into memory and execute it. The
+only thing that a Linux kernel depends on is the DDR memory: enough memory to
+hold the Linux kernel. Kernel size is from 1 MiB to a dozen MiB depending on the
+number of drivers built-in.
+
+Embedded world was a little bit different from the x86 space. On x86 device
+almost all devices is on the PCI bus, so system can always know what knid of
+devices are present. However on the embedded world, devices are directly MMIOed
+on the CPU address space, it is impossible for the system to discover all
+available devices on the fly. So some kind of static data is required to expose
+that information.
+
+It started with statically declare various devices in the board support package
+and register them to the kernel. So drivers can be matched and the device can be
+used. However that means every different chip (even different board with the
+same chip) need a dedicated kernel compiled for it. Unlike in x86 world the same
+kernel image basically runs everywhere, regardless of the CPU type and machine
+type whatsoever.
+
+PowerPC world then initiated a concept called device tree: instead of hard
+coding device information in kernel C code, it is provided in a separate source
+and a dedicated per-board binary will be generated from the text-based
+description files. In these text-based description files, all aspects that is
+specific to chip and boards will be described. This is a very good example of
+data-driven software development.
+
+And now the ARM world also enbranced this concept and theretically, the same ARM
+linux kernel can run everywhere with the same CPU architecture, provided with a
+specific "device tree".
+
+Here is a list of files needed to boot Linux kernel:
+
+* Linux kernel image: kernel and built-in drivers
+* Device Tree Blob: binary file that describes the board/chip.
+* initialramfs: The initial memory based file system, optional.
+
+With DDR memory available, using initramfs we can already boot into Linux user
+space, without needing any persistent storage.
+
+Booting into User Space
+=======================
+Linux kernel booting process is rather complicated. It includes setting console
+initialization, setting up paging for memory management unit, till starting the
+first user space process: init.
+
+And it is the init process that starts up everything else, including getty that
+listens on serial ports, X servers etc.
+
+Cross Compiling
+===============
+Unless you develop for x86 based platform, otherwise it is very likely that you
+will need a cross compiling setup.
+
+Cross Compiling means: you work on x86 machine but want to compile code for
+another architecture, say ARM architecture. Such that you are generating ARM
+binary code on x86 machines.
+
+Ubuntu comes with the cross compiler for ARM in its standard repository, and you
+can just install it via apt-get install:
+
+    $ sudo apt-get install arm-linux-gcc
+
+Get Linux Kernel
+================
+Linux source code is managed in a source code management system called
+[git](http://git-scm.com), you can clone the complete Linux development history
+with:
+
+    $ git clone https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+
+Compiling Kernel
+================
+
+Test Linux Kernel without real hardware
+=======================================
+
+To be continued ...

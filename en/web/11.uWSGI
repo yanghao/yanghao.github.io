@@ -1,0 +1,7 @@
+uWSGI: Python WSGI application server
+=====================================
+[uWSGI](http://projects.unbit.it/uwsgi/) is a application server for many
+different languages. Python is the first language it supported and WSGI is the
+standard protocol used for python application and server interface.
+
+To be continued ...

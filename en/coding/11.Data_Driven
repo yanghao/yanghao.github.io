@@ -1,0 +1,51 @@
+Data Driven Programming
+-----------------------
+Data driven programming means the result of your program, and even the flow of
+your program is determined from a set of input data, rather than hard-coded
+program execution flow.
+
+# Why Data Driven Programming
+Like any kind of programming and problem solving, you would want to design a
+solution that solves a generic problem, rather than designing specific solution
+for specific problems. Because when the problem changes even a little bit, you
+would have to have re-design your program to fits, and you can not scale very
+well as a software engineer.
+
+Data Driven programming is one kind of designing programs that solves generic
+problems:
+- You don't restrict your program to only have the data from a specific problem
+- You don't hard code any data into your program: you read the data from a
+  source and provide a well defined interface for getting in data.
+
+# Example on Data Driven Programming
+Let's say you want to design a GUI program. But:
+
+- you don't really know what kind of users are going to use it
+
+- you don't really know what names the user prefer to name a button
+
+- you don't really know the number of buttons a particular user need
+
+Then you could design your GUI program in a way that:
+
+- The program reads a config file to determine various aspects of the look and
+  feel
+
+- In the config file, you can re-name all buttons
+
+- In the config file, you can define the number of buttons (and its functions)
+
+This way, you can fast response for new changes by just changing a static file,
+rather than modifying your GUI code to reflect the changes. However a few thing
+need to be careful:
+
+- A well defined interface between the config file and your GUI application
+
+- There is an overhead to design general purpose program: more things need to be
+  taken care
+
+- only when it comes to new changes the effort you invested additionally in
+  data-driven design can be shown. If an application is never ever going to
+  change (it is difficult to predict though), you could probably hard code the
+  data to avoid the additional effort that might incurred with data-driven
+  design.

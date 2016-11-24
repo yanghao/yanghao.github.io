@@ -1,0 +1,40 @@
+# Introduction to xiaoyezi.org
+------------------------------
+So what exactly do you want and expect from a personal website?
+
+The anwser differs for different people as they have different needs.
+For me, as a developer and engineer (both in software and hardware),
+that is searching for beauty and simplicity in solving real world problems,
+I wanted a web framework that allow me to generate dynamic contents,
+but still simple enough that I could understand all its guts, no single
+black box can be tolerated.
+
+Many existing web frameworks is trying to fix the hard problems, they assume
+the users are naive and stupid, and try to hide the complexity and offer as
+few choices as possible. However it turns out that the complexity they
+created is actually much more than hided. The result is many users gets frustrated.
+
+I came as such a frastrated user and tired of reading user manuals.
+And suddenly when I dropped by [webob web site](http://webob.org "webob.org") where it shows
+how simple a web framework can be created in Python. This inspired me to dig into
+more low level stuff in a web framework.
+
+> Do you pine for the days when men were men and wrote their own device drivers?
+> Linus Torvalds
+
+At the present when all kinds of web frameworks available out there, you can just pick
+one up and go ahead with it, just as you can download a Linux kernel where almost
+every driver is already ready for you to use. But do you pine for the days that you yourself
+that write your own drivers? Do you pine for the same for your personal web site?
+
+Yes I do. I'm kind of a nerd and I am afraid even if there is a single thing in
+a big system that I cannot come up with an idea how it is implemented. I always dig deep
+enough when I understood everything, how it could possibly implemented and combined together
+to run. That kind of attitude made me really fast whenever I encounter a problem, because
+when problem happens, I no longer searching blindly what could go wrong, instead I can
+immediately identify where must the issue come from. If I'm right, I'm more confident.
+And if I'm wrong, I learn something.
+
+In the [about site](02.About-Site "About building this site") section, you will see how
+this site is implemented, why it is easy to manage, why it serves super fast and uses only
+very few system resourses, as well as why certain feature is omitted.

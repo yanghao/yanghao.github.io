@@ -1,0 +1,40 @@
+Radio: Reach out the universe with the speed of light
+=====================================================
+I still remember the first radio I made by hand, with many discrete parts
+soldered on a PCB board. But there is a pre-soldered SONY chip on the PCB, which
+makes it impossible if you ever wanted to understand every single part of it.
+The chip is just too complicated to understand.
+
+Radio was considered very hardware bounded
+technology. You need Radio Frequency front end,
+you need specialized digital signal processing hardware,
+and then comes some higher level software stuff.
+
+But now, with the concept of SDR (Software Defined Radio),
+it all changed. As now the personal computer processing
+power (together with the parrallel processing power of graphics engine),
+many radio technologies that was once existed only on
+dedicated hardware can now also be implemented in pure software.
+Heard about LTE? [Fabrice Bellard implemented a LTE base station in
+software](http://bellard.org/lte/ "LTE in Software").
+
+The even more exciting thing is, with USRP you can afford
+such an SDR platform just at home. Oh yes, you still need
+some hardware for SDR, but basically the hardware does is to
+down convert the radio fequency signal to base band frequency signal
+and sample the base band signal with a very high speed analog to
+digital converter and vice versa.
+
+When I think about making things happen in software compared with specialized
+hardware, the meaning is far more than just easy to adapt quickly, much shorter
+turn around time and so on. A much more important meaning behind this is,
+implemention in software can easily reach millions of people because it is
+extremely easy to duplicate. Whereas the magic burried in hardware is much more
+difficult to reach out to a wide audience and uncover its logic. This means
+software implementation is much easier for knowledge transfer, which can greatly
+speed up new technology community growth and eventually make the technology
+itself evolving much faster. It could even have a similar significance as the
+open source initiative.
+
+This section is all about softare-defined radio technologies. Radio technology
+using dedicated hardware will go to the *Device* section.

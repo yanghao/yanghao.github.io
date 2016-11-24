@@ -1,0 +1,14 @@
+Web Technology. In Python.
+==========================
+The web is exciting. So is building your own website.
+With a 2.63 giga herts single core cpu, 512 MB
+memory, what kind of web site can I build? and how
+many requests it can serve in 1 seconds?
+
+This site is built with few dozen lines of Python code, yet are able to serve
+very well hundreds of request per second. It is caching and nginx none-blocking
+IO model that made resources consumed on the serve by each connection to a
+minimum.
+
+This section discusses all kinds of (mostly Python oriented) web technologies
+that are used for building high performance website.

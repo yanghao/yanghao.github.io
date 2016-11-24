@@ -1,0 +1,25 @@
+Arduino: System on Chip with 8 bit microcontroller
+==================================================
+When I was in the automatic robot design team during college years, we have
+already had quite some experience in using the [Atmel MEGA-series MCU][atmel]. Nearly all
+of our robots are based on this controller.
+
+And now, the [Arduino project][arduino] made the MEGA-series MCU extremely easy to use,
+with a good IDE that comes with integrated library code.
+
+Introduction to MEGA-series MCU
+===============================
+
+Introduction to Arduino Project
+===============================
+
+MCU functions
+=============
+
+Sensors
+=======
+
+[atmel]: http://www.atmel.com/products/microcontrollers/avr/megaavr.aspx
+[arduino]: http://www.arduino.cc/
+
+To be continued ...

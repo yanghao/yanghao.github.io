@@ -1,0 +1,39 @@
+# How xiaoyezi.org is build
+---------------------------
+> One of my most productive days was throwing away 1000 lines of code.
+-- Ken Thompson, creator of UNIX
+
+So here comes my requirement for my own site:
+
+1. I own *every damm thing* in my system.
+2. I want a single core CPU machine with only 512MB memory to serve many requests
+and yet consumes only very little system resourses.
+3. I want dynamic page, but data is plain files, I don't really need a full-fledged database.
+4. I write my page in my favorite text editor, not in a browser.
+
+The first requirement makes the normal hosting providers out of the game.
+[Amazon EC2](http://aws.amazon.com "Amazon AWS") could be a good place
+where I have a virtual server where I do whatever I want and have root all the time.
+But it does not have a server in China so the connection is slow.
+China does not lack of copy cats and [Aliyun](http://aliyun.com "Aliyun") soon stands out.
+89 RMB per month, I can live with that.
+
+The second requirement makes the most popular web server Apache out of the game.
+As it is really too bloated and its request-per-thread model really does not scale well.
+[Nginx](http://nginx.org "Nginx Site") is a good one, as its event driven model can
+maintain many connections with even a single process. The python part I choose [uwsgi](http://projects.unbit.it/uwsgi)
+to serve WSGI python applications.
+
+The other thing is, my pages are not upating very often, I don't want every page
+to be regenerated everytime, so I need a cache, and obviuosly [memcached](http://memcached.org)
+is the one. I don't really need a full fledged framework, and I only picked some stuff
+from webapp2, basically only its application and request response model (which is actually using webob).
+I need to implemented the caching policies and generate dynamic page from plain files.
+
+The third and forth requirement defines the user interface, I myself will be the developer as well as the user.
+Whereever I am, I do the edit/commit and push the changes to a public
+repository, a cron job running on the web server polls the public repository
+every 5 minutes and if there is an update, pull the changes and clean the cached
+content in Memcached. The the complete publish flow is automatic.
+
+And that's it, it took me a few days to make it running very stable.

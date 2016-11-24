@@ -1,0 +1,23 @@
+# Home for xiaoyezi.org
+------------------------
+
+This is the home page of Hua Yanghao, documenting various technologies and ideas
+which he wants to share with you.
+
+It took some time to figure out what kind of site I want to build.
+A site I understands every bit of it. First he tried Django, then google appengine.
+But none of these work out so well. For the site I need is extremely simple to maintain,
+yet fits well into the hands of a software developer. I don't have extra money
+to rent big machines, so the site have to be able to service very well on low
+end machines. It needs the flexibility to adopt changes quickly and update
+automatically to reduce maintenance efforts. This is also a learning project
+that I could explore what kind of issues I could encounter when design a high
+performance website.
+
+So I developed it from scratch, using webapp2 and webob python library, plus the
+mako template engine, which I loves so much: now I can write template as writing
+python code.
+
+This is the place for fun, and hopefully you enjoyed your stay here.
+
+EOF
