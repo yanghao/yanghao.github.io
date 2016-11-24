@@ -2,9 +2,9 @@
 title: Hua Yanghao's Front page / Coding
 layout: nil
 ---
-{% include ../../stylesheets/stylesheet.css %}
-{% include ../../stylesheets/github-dark.css %}
-{% include ../../stylesheets/print.css %}
+{% include stylesheet.css %}
+{% include github-dark.css %}
+{% include print.css %}
 
 The journey of coding
 =====================
