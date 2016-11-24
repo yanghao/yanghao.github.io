@@ -1,7 +1,11 @@
 ---
-title: Hua Yanghao's Front page
-layout: post
+title: Hua Yanghao's Front page / Coding
+layout: nil
 ---
+{% include stylesheets/stylesheet.css %}
+{% include stylesheets/github-dark.css %}
+{% include stylesheets/print.css %}
+
 The journey of coding
 =====================
 
