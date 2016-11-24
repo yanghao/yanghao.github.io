@@ -1,6 +1,6 @@
 ---
 title: Hua Yanghao's Front page / Coding
-layout: nil
+layout: post
 ---
 
 The journey of coding
