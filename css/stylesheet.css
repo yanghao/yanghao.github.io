@@ -136,11 +136,20 @@ ul li {
 ul li:before {
   content: ">>";
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 13px;
+  font-size: 26px;
   color: #b5e853;
   margin-left: -37px;
   margin-right: 21px;
-  line-height: 16px;
+  line-height: 26px;
+}
+
+li {
+    font-size: 26px;
+}
+
+p {
+    font-size: 20px;
+    color: #b5e853;
 }
 
 blockquote {
@@ -228,6 +237,11 @@ hr {
 
 a {
   color: #63c0f5;
+  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+}
+
+span {
+  color: #b5e853;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 
