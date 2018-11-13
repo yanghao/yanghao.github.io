@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "This is the first post"
+date: 2018-11-13
 ---
 
 Well. Finally got around to putting this old website together.
