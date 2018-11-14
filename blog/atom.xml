@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Yanghao Hua's Blog Atom Feeds</title>
+	<link href="http://io.xiaoyezi.org/blog/atom.xml" rel="self"/>
+	<link href="http://io.xiaoyezi.org/blog"/>
+	<updated>2018-11-14 22:15:41</updated>
+	<id>http://io.xiaoyezi.org/blog</id>
+	<author>
+		<name>Yanghao Hua</name>
+		<email>huayanghao@gmail.com</email>
+	</author>
+
+		<entry>
+			<title>2018-11-14-This-Is-A-Test-Post.html</title>
+			<link href="http://io.xiaoyezi.org/blog/2018-11-14-This-Is-A-Test-Post.html"/>
+			<updated>2018-11-14 22:15:41</updated>
+			<id>http://yanghao.github.io/blog/0</id>
+			<content type="html">Check the web for content.</content>
+		</entry>
+
+</feed>
