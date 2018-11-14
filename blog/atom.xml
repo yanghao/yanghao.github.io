@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-	<title>Yanghao Hua's Blog</title>
+	<title>Yanghao Hua's Blog Atom Feeds</title>
 	<link href="http://io.xiaoyezi.org/blog/atom.xml" rel="self"/>
 	<link href="http://io.xiaoyezi.org/blog"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://hankquinlan.github.io/blog</id>
+	<id>http://io.xiaoyezi.org/blog</id>
 	<author>
 		<name>Yanghao Hua</name>
 		<email>huayanghao@gmail.com</email>
@@ -14,7 +14,7 @@
 	{% for post in site.posts %}
 		<entry>
 			<title>{{ post.title }}</title>
-			<link href="http://hankquinlan.github.io{{ post.url }}"/>
+			<link href="http://io.xiaoyezi.org{{ post.url }}"/>
 			<updated>{{ post.date | date_to_xmlschema }}</updated>
 			<id>http://yanghao.github.io{{ post.id }}</id>
 			<content type="html">{{ post.content | xml_escape }}</content>
