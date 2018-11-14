@@ -22,7 +22,6 @@
             </ul>
         </nav>
         <div class="container">
-            <div class="blurb">
 
 <%block name="content">
 <p>
@@ -30,7 +29,6 @@ Welcome to my home page.
 </p>
 </%block>
 
-            </div>
         </div><!-- /.container -->
         <footer>
             <ul>

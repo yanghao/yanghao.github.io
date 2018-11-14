@@ -6,3 +6,6 @@ def list_all(path):
         d.sort()
         f.sort()
         return d + f
+
+from time import strftime
+date = strftime("%Y-%m-%d %H:%M:%S")

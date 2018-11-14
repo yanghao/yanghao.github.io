@@ -1,0 +1,23 @@
+<%inherit file="/mako/default.mako"/>
+
+<%block name="head">
+Yanghao Hua's Blog
+</%block>
+
+<%block name="content" filter="markdown">
+# The test post
+
+* list 1
+* list 2
+* list 3
+
+Another line.
+
+    import os
+    import sys
+    def test():
+        print("Hello World!")
+    test()
+
+This is a [link to my home page](/).
+</%block>
