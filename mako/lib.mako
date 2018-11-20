@@ -5,3 +5,6 @@
         % endfor
     </ul>
 </%def>
+<%def name="hash(n)">
+${'#'*n}\
+</%def>

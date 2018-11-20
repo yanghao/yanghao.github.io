@@ -1,10 +1,44 @@
+<%namespace file="/mako/lib.mako" import="hash"/>
 <%inherit file="/mako/default.mako"/>
 <%block name="head">
 Yanghao Hua's CV
 </%block>
 
-<%block name="content">
-<p>
-To-Be-Available.
-</p>
+<%block name="content" filter="markdown">
+${hash(1)}Introduction:
+--------------------------
+I am a passionate maker, building hands on stuff, love programming (specialize in
+design patterns and modeling).
+
+${hash(1)}Education:
+--------------------------
+* Singapore, NTU and TUM, Master of Science, Integrated Circuit Design.
+* China, XJTU, Bachelor of Engineer, Electronics Science and Technology.
+
+${hash(1)}Work Experience:
+--------------------------
+* Germany/Munich, 2016.01 ~ Now, Intel, Member of Technical Staff.
+* China/Xi'an, 2008.03 ~ 2015.12, Infineon and Intel, Engineer/Senior Engineer.
+* Singapore, 2007.06 ~ 2008.02, Infineon, Intern, system modeling.
+
+${hash(1)}Project:
+--------------------------
+* Many Intel/iCDG/modem projects, Pre-Si verification in emulation, Post-Si
+  bring-up/power-on. Various roles from technical lead, status-quo breaker, to
+  hands-on debugging of complex system issues.
+* USW, A universal embedded software environment. (To-Be-Open-Sourced)
+* DARS, A distributed Automatic Regression testing System. (To-Be-Open-Sourced)
+* IPC/PCIe system engineering.
+* PCIe verfication/validation lead.
+* U-Boot/Linux Verification lead and BSP porting to new SoC.
+* hb_arq protocol implementation for reliable communication via unreliable link.
+* Verification Hypervisor implemented on intel/x86 virutalization technology.
+* sofia-hvp, A KVM based hybrid virtual prototype system with Python enabled. (To-Be-Open-Sourced)
+* Bjoern wsgi server: contributed python3 support.
+* stdfparser, the only open source VLSI-test data parser for both V3/V4 format.
+* China/Xi'an, 2005.10 ~ 2006.08, XJTU, Student, Vice President of Robocon Team.
+  Responsible for overall robot control system architecture and PCB/CPLD/firmware design.
+    * Champion of Robocon China 2006 (first Robocon China Champion for XJTU).
+    * Second runner up of Robocon International game 2006.
+
 </%block>

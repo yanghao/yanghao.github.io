@@ -136,15 +136,20 @@ ul li {
 ul li:before {
   content: ">>";
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 26px;
+  font-size: 16px;
   color: #b5e853;
   margin-left: -37px;
   margin-right: 21px;
-  line-height: 26px;
+  line-height: 20px;
+}
+
+.li_big {
+    font-size: 26px;
+    color: #b5e853;
 }
 
 li {
-    font-size: 26px;
+    font-size: 20px;
     color: #b5e853;
 }
 

@@ -15,10 +15,10 @@
         <h1><%block name="head">Yanghao Hua's Home Page</%block></h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/cv.html">CV</a></li>
-                <li><a href="/about.html">About</a></li>
+                <li class="li_big"><a href="/">Home</a></li>
+                <li class="li_big"><a href="/blog">Blog</a></li>
+                <li class="li_big"><a href="/cv.html">CV</a></li>
+                <li class="li_big"><a href="/about.html">About</a></li>
             </ul>
         </nav>
         <div class="container">
@@ -32,10 +32,10 @@ Welcome to my home page.
         </div><!-- /.container -->
         <footer>
             <ul>
-                <li><a href="https://github.com/yanghao">github</a></li>
-                <li><a href="https://www.linkedin.com/in/huayanghao/">linkedin</a></li>
-                <li><a href="http://xiaoyezi.org">xiaoyezi</a></li>
-                <li>contact: yanghao dot hua at google's mail dot com</li>
+                <li class="li_big"><a href="https://github.com/yanghao">github</a></li>
+                <li class="li_big"><a href="https://www.linkedin.com/in/huayanghao/">linkedin</a></li>
+                <li class="li_big"><a href="http://xiaoyezi.org">xiaoyezi</a></li>
+                <li class="li_big">contact: yanghao dot hua at google's mail dot com</li>
             </ul>
             <p>Powered by: github pages and <a href="https://nicolas-van.github.io/pygreen/">pygreen</a></p>
         </footer>
