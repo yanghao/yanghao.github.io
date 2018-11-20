@@ -5,6 +5,8 @@ def list_all(path):
         f = list(files)
         d.sort()
         f.sort()
+        d.reverse()
+        f.reverse()
         return d + f
 
 from time import strftime
